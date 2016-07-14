@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+/* 文件载入
+ ----------------------------------------------------------*/
+ @import  "./style/data";                  /* 变量文件 */
+ @import  "./style/font";					 				 /* Web 字体 */
+ @import  "./style/mixin";                 /* 混入文件 */
+ @import  "./style/animation";				 		 /* CSS3动画 */
+ @import  "./reset";                  		 /* CSS Reset */
+ @import  "./csshake";                 		 /* css hake */
+
+
+/* 页面
+ ---------------------------------------------------------- */
+
+$theme-blue: #5A8AE0;
+$theme-red: rgb(244, 67, 54);
+$theme-silver: rgb(204, 204, 204);
+
+html, body {
+  width: 100%;
+  height: 100%;
+	background: $theme-red;
+	// background: $theme-silver;
+}
+button {
+	-webkit-app-region: no-drag;
+}
+
+.wrapper {
+	position: relative;
+  width: 100vw;
+  height: 100vh;
+	// -webkit-app-region: drag;
+}
+
+.frame-bar {
+	width: 100vw;
+	height: 24px;
+	// border-bottom: 1px solid rgb(167, 167, 167);
+	// background: rgb(244, 244, 244);
+	// background: rgba(0, 0, 0, .3);
+	-webkit-app-region: drag;
+}
+.quit, .mini {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 5px 0 5px 5px;
+	border: 1px solid rgb(205, 205, 205);
+	border-radius: 24px;
+	background: rgb(215, 215, 215);
+	outline: 0;
+}
+.quit:hover {
+	background: lighten($theme-red, 15%);;
+	border: 1px solid lighten($theme-red, 15%);
+}
+.mini:hover {
+	background: rgb(251, 177, 21);
+	border: 1px solid rgb(251, 177, 21);
+}
+
+.pomodoro-bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -999;
+}
+.pomodoro-bar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	background: rgba(255, 255, 255, .15);
+	z-index: -998;
+}
+
+.pomodoro-box {
+	width: 360px;
+	height: auto;
+	min-height: 360px;
+	margin: 0 auto;
+	// background: rgba(0,0,0,.1);
+}
+.pomodoro-name {
+	padding: 48px 12px;
+	font: normal 24px/48px "Helvetica Neue", "Helvetica", "San Fransisco", "Times New Roman", sans-serif;
+	color: #FAFAFA;
+	text-align: center;
+	// background: rgba(0,0,0,.1);
+}
+.pomodoro-timer {
+	width: 360px;
+	height: 360px;
+	overflow: hidden;
+	// background: rgba(0,0,0,.1);
+}
+#progress {
+
+}
+.pomodoro-trigger {
+	width: 100%;
+	height: 48px;
+	margin: 48px 0;
+	// background: rgba(0,0,0,.1);
+}
+
+
+
+// .pin-box {
+// 	position: relative;
+// 	display: block;
+// 	height: 702px;
+// 	background: #F2F9FE;
+// }
+// .pin-in {
+// 	float: left;
+// 	box-sizing: border-box;
+// 	width: 90vw;
+// 	height: 36px;
+// 	border: none;
+// 	margin: 0;
+// 	padding: 0 7px;
+// 	font: normal 18px/36px "Helvetica Neue", "Helvetica", "San Fransisco", "Times New Roman", sans-serif;
+// 	color: $theme-blue;
+// 	outline: 0;
+// 	box-shadow: inset 0 7px 12px rgba(0,0,0,.15);
+// }
+// .pin-sub {
+// 	float: right;
+// 	width: 10vw;
+// 	height: 36px;
+// 	border: none;
+// 	margin: 0;
+// 	padding: 0;
+// 	font: normal 18px/36px "Helvetica Neue", "Helvetica", "San Fransisco", "Times New Roman", sans-serif;
+// 	color: #F2F9FE;
+// 	outline: 0;
+// 	background: $theme-blue;
+// 	&:active {
+// 		 box-shadow: inset 0 7px 12px rgba(0,0,0,.15);
+// 	}
+// }
+//
+// .pin-box ul {
+//
+// }
+// .pin-item {
+// 	padding: 0 7px;
+// 	font: normal 18px/36px "Helvetica Neue", "Helvetica", "San Fransisco", "Times New Roman", sans-serif;
+// 	color: $theme-blue;
+// }
+//
+//
+// .time-box {
+//   position: fixed;
+//   bottom: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 72px;
+// 	// border-radius: 5px;
+// 	background: rgb(244, 244, 244);
+// 	box-shadow:inset 0 7px 12px rgba(0,0,0,.05), inset 0 7px 24px rgba(0,0,0,.15), inset 0 7px 36px rgba(0,0,0,.1);
+// 	overflow: hidden;
+// 	-webkit-app-region: no-drag;
+// }
+// .time-bar {
+// 	position: relative;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 50vw;
+// 	height: 72px;
+// 	// border-radius: 5px;
+// 	background: rgb(126,82,177);
+// 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdlNTJiMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1YThhZTAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+// 	background: -moz-linear-gradient(left, rgba(126,82,177,1) 0%, rgba(90,138,224,1) 100%);
+// 	background: -webkit-linear-gradient(left, rgba(126,82,177,1) 0%,rgba(90,138,224,1) 100%);
+// 	background: linear-gradient(to right, rgba(126,82,177,1) 0%,rgba(90,138,224,1) 100%);
+// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7e52b1', endColorstr='#5a8ae0',GradientType=1 );
+// 	box-shadow: 7px 0px 12px rgba(0,0,0,.05);
+// }
+// .time-text {
+// 	position: absolute;
+// 	left: 50%;
+// 	width: 240px;
+// 	height: 48px;
+// 	margin-top: 12px;
+// 	margin-left: -120px;
+// 	font: normal 36px/48px "American Typewriter" ,"Herculanum", "Helvetica Neue", "Helvetica", "San Fransisco", "Times New Roman", sans-serif;
+// 	color: #F2F9FE;
+// 	text-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+// 	letter-spacing: .1em;
+// 	text-align: center;
+// 	cursor: default;
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	-ms-user-select: none;
+// 	z-index: 999;
+// }

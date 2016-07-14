@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+$size: 360px; // 圆环宽高
+$borderWidth: 7px; // 轨道宽度
+$fontColor: #FAFAFA; // 文字颜色
+
+@keyframes toggle {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@mixin positioning($pos: absolute) {
+	position: $pos;
+	top: 0;
+	left: 0;
+	height: $size;
+	width: $size;
+}
+
+.progress-ring {
+	@include positioning(relative);
+
+	div {
+		@include positioning; /* 圆环宽高，可自定义 */
+		border: $borderWidth solid transparent;
+		border-radius: 50%;
+		box-sizing: border-box;
+	}
+	.progress-left, .progress-right, .progress-cover {
+		clip: rect(0 ($size / 2) $size 0); /* rect( [0 | <width/2> | <height> | 0] ) */
+	}
+	.progress-right {
+		opacity: 0;
+		transform: rotate(180deg);
+	}
+
+	.progress-text {
+		border: none;
+  	font-family: "Arial", sans-serif;
+  	text-align: center;
+  	font-size: ($size / 4);
+  	color: $fontColor; /* 进度文字颜色 */
+  	line-height: $size;
+	}
+	.progress-sec {
+		font-size: .55em;
+		font-style: italic;
+		font-family: "Microsoft Yahei", sans-serif;
+	}
+}

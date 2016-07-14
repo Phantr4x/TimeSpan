@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@keyframes toggle {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.progress-ring {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 360px;
+  width: 360px; }
+  .progress-ring div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 360px;
+    width: 360px;
+    /* 圆环宽高，可自定义 */
+    border: 7px solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box; }
+  .progress-ring .progress-left, .progress-ring .progress-right, .progress-ring .progress-cover {
+    clip: rect(0 180px 360px 0);
+    /* rect( [0 | <width/2> | <height> | 0] ) */ }
+  .progress-ring .progress-right {
+    opacity: 0;
+    transform: rotate(180deg); }
+  .progress-ring .progress-text {
+    border: none;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    font-size: 90px;
+    color: #FAFAFA;
+    /* 进度文字颜色 */
+    line-height: 360px; }
+  .progress-ring .progress-sec {
+    font-size: .55em;
+    font-style: italic;
+    font-family: "Microsoft Yahei", sans-serif; }
+
+/*# sourceMappingURL=progress.css.map */
