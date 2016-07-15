@@ -1,0 +1,27 @@
+{
+  "name": "time-span",
+  "version": "1.0.0",
+  "description": "A Simple Todo Application.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phantr4x/TimeSpan.git"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.6"
+  },
+  "keywords": [
+    "Electron",
+    "Pomodoro",
+    "Timer"
+  ],
+  "author": "Phantr4x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Phantr4x/TimeSpan/issues"
+  },
+  "homepage": "https://github.com/Phantr4x/TimeSpan#readme"
+}
