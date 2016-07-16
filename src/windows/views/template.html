@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>TimeSpan</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
     <link rel="stylesheet" href="../styles/style.css">
   </head>
   <body>
@@ -13,16 +13,20 @@
         <h1 class="pomodoro-name">TimeSpan</h1>
         <input class="pomodoro-input" type="text" name="pomodoro-input" value="TimeSpan" />
         <div class="pomodoro-timer-box">
-          <span id="pomodoro-banner">25:00</span>
-          <canvas id="pomodoro-timer" data-process="0" data-bgcolor="#B71C1C" data-ficolor ="#FAFAFA" width="360" height="360"></canvas>
+          <span class="pomodoro-banner"></span>
+          <svg class="pomodoro-indicator" width="360" height="360" viewbox="0 0 360 360">
+            <circle cx="180" cy="180" r="175" stroke-width="7" stroke="rgba(0,0,0,0.15)" fill="none"></circle>
+            <circle cx="180" cy="180" r="175" stroke-width="7" stroke="#FAFAFA" fill="none" transform="matrix(0,-1,1,0,0,360)" stroke-dasharray="0 1099"></circle>
+          </svg>
         </div>
         <div class="pomodoro-trigger-box">
-          <a id="pomodoro-trigger" class="btn-floating btn-large white"><i class="material-icons red-text">play_arrow</i></a>
+          <a class="pomodoro-trigger btn-floating btn-large white"><i class="material-icons red-text">play_arrow</i></a>
         </div>
       </div>
     </div>
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script type="text/javascript" src="http://cdn.bootcss.com/moment.js/2.14.1/moment.min.js"></script>
+    <script type="text/javascript" src="./../renderers/settings.js"></script>
     <script type="text/javascript" src="./../renderers/pomodoro-timer.js"></script>
     <script type="text/javascript" src="./../renderers/pomodoro-inputer.js"></script>
     <script>if (window.module) module = window.module;</script>
