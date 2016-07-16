@@ -38,21 +38,20 @@ timer = setInterval(() => {
 
 
 trigger.onclick = (event) => {
-  // event.preventDefault();
   timestamp = moment();
   endtime = moment().add(pmdrSpan, 'm');
-  // ctx.beginPath();
-  // ctx.arc(w/2, h/2, 180-lineWid/2, 0, Math.PI*2);
-  // ctx.lineWidth = lineWid;
-  // ctx.strokeStyle = bgColor;
-  // ctx.stroke();
 }
 
 function timeCounter() {
   let m = endtime.diff(current, 'minutes'),
-      s = endtime.diff(current, 'seconds')%60,
-      ms = endtime.diff(current, 'milliseconds').toString().slice(4);
-  let pmdrText = m + ":" + s + ":" + ms;
+      s = endtime.diff(current, 'seconds')%60;
+      // ms = endtime.diff(current, 'milliseconds').toString().slice(4);
+  let pmdrText;
+  if (s < 10 && s >= 0) {
+    pmdrText = m + ":0" + s;
+  } else {
+    pmdrText = m + ":" + s;
+  }
   document.getElementById('pomodoro-banner').innerHTML = pmdrText;
   // console.log(m, s, ms);
 }
@@ -85,9 +84,9 @@ function draw(ctx, w = 360, h = 360, prc = 0, bg = '#FFF', fi = '#000', wid = 7,
 
   // 画背景环
   ctx.beginPath();
-  ctx.arc(w/2, h/2, w/2, 0, Math.PI * 2);
+  ctx.arc(w/2, h/2, w/2, -Math.PI/2, Math.PI*1.5);
   ctx.closePath();
-  ctx.fillStyle = bg;
+  ctx.fillStyle = '#e53935';
   ctx.fill();
   // 画进度环
   ctx.beginPath();

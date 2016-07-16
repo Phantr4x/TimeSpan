@@ -42,7 +42,7 @@ html, body {
   margin: 48px 0;
   border-bottom: 1px solid $theme-red;
   font: normal 24px/48px "Helvetica Nenu", "Helvetica", "Arial", sans-serif;
-  color: #FAFAFA;
+  color: $theme-white;
   text-align: center;
 }
 input[type=text].pomodoro-input {
@@ -55,15 +55,15 @@ input[type=text].pomodoro-input {
   padding: 0;
   border: none;
   font: normal 24px/48px "Helvetica Nenu", "Helvetica", "Arial", sans-serif;
-  color: #FAFAFA;
+  color: $theme-white;
   background: transparent;
   text-align: center;
   outline: 0;
   border-bottom: 1px solid $theme-red;
 }
 input[type=text].pomodoro-input:focus {
-  border-bottom: 1px solid #FAFAFA;
-  box-shadow: 0 1px 0 0 #FAFAFA;
+  border-bottom: 1px solid $theme-white;
+  box-shadow: 0 1px 0 0 $theme-white;
 }
 
 .pomodoro-timer-box {
@@ -79,7 +79,7 @@ input[type=text].pomodoro-input:focus {
   height: 72px;
   font: normal 48px/72px "Helvetica Nenu", "Helvetica", "Arial", sans-serif;
   letter-spacing: .1em;
-  color: #FAFAFA;
+  color: $theme-white;
   text-align: center;
   z-index: 999;
 }
