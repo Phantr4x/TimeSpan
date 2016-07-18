@@ -1,15 +1,17 @@
 "use strict";
 
-window.onload = () => {
+window.onload = init;
+function init() {
   let trigger = document.querySelector('.pomodoro-trigger') || document.getElementsByClassName('pomodoro-trigger')[0],
       banner = document.querySelector('.pomodoro-banner') || document.getElementsByClassName('pomodoro-banner')[0],
       background_circle = document.getElementsByTagName('circle')[0] || document.querySelectorAll('circle')[0],
       progress_circle = document.getElementsByTagName('circle')[1] || document.querySelectorAll('circle')[1];
-
   let radius = progress_circle.getAttribute('r');
   // console.log(background_circle, progress_circle);
   let current, start, end;
   let percent;
+
+  let trigger_status = false;
 
   banner.innerHTML = SETTINGS.duration + ':00';
   let timer = setInterval(() => {
@@ -22,9 +24,12 @@ window.onload = () => {
   trigger.ontap = triggerHandler;
 
   function triggerHandler() {
+    trigger_status = !trigger_status;
+    let icon = document.querySelector('.pomodoro-trigger').querySelector('.material-icons');
+    icon.setAttribute('data-trigger', trigger_status);
+    trigger_status ? icon.innerHTML = 'pause' : icon.innerHTML = 'play_arrow';
     start = moment();
     end = moment().add(SETTINGS.duration, 'minutes');
-    // console.log(start, end);
   }
 
   function progressUpdater(current) {
@@ -32,8 +37,8 @@ window.onload = () => {
     percent = 1 - timepass / (60 * SETTINGS.duration);
     let perimeter = Math.PI * 2 * 175;
     let lt = perimeter * percent,
-        rt = perimeter * (1- percent);
-    console.log(timepass, percent);
+      rt = perimeter * (1 - percent);
+    // console.log(timepass, percent);
     if (percent >= 0) {
       progress_circle.setAttribute('stroke-dasharray', lt + " " + rt);
     }
@@ -41,7 +46,7 @@ window.onload = () => {
 
   function timeCounter() {
     let m = end.diff(current, 'minutes'),
-        s = end.diff(current, 'seconds')%60;
+        s = end.diff(current, 'seconds') % 60;
     if (m >= 0 && s >= 0) {
       s < 10 ? s = '0' + s : s += '';
       banner.innerHTML = m + ":" + s;
