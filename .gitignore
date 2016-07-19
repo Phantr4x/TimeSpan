@@ -35,3 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+# Sass Cache
+src/windows/styles/.sass-cache
+src/windows/.sass-cache/020f6f0d174687900b16e4c4ea7ab2f6960f838e/_csshake.scssc
+src/windows/.sass-cache/020f6f0d174687900b16e4c4ea7ab2f6960f838e/_reset.scssc
+src/windows/.sass-cache/020f6f0d174687900b16e4c4ea7ab2f6960f838e/style.scssc
+src/windows/.sass-cache/809d7555707a9a689906a84b7b067f8332d7ccda/_animation.scssc
+src/windows/.sass-cache/809d7555707a9a689906a84b7b067f8332d7ccda/_data.scssc
+src/windows/.sass-cache/809d7555707a9a689906a84b7b067f8332d7ccda/_font.scssc
+src/windows/.sass-cache/809d7555707a9a689906a84b7b067f8332d7ccda/_mixin.scssc
