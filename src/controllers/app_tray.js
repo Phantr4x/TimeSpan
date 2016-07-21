@@ -3,7 +3,7 @@
 const path = require('path');
 const {app, Menu, nativeImage, Tray} = require('electron');
 
-const Common = require('../../common');
+const Common = require('../common');
 
 class AppTray {
   constructor(timerWindow, stickyWindow) {

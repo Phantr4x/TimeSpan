@@ -3,7 +3,7 @@
 const path = require('path');
 const {app, BrowserWindow, ipcRenderer} = require('electron');
 
-const Common = require('./../../common.js');
+const Common = require('./../common.js');
 
 class TimerWindow {
   constructor() {
@@ -18,10 +18,12 @@ class TimerWindow {
       minWidth: 360,
       minHeight: 672,
       resizable: true,
-      backgroundColor: "#F44336",
+      backgroundColor: '#F44336',
       center: true,
       show: true,
-      frame: true,
+      // frame: false,
+      // transparent: true,
+      // titleBarStyle: 'hidden',
       autoHideMenubar: false,
       webPreferences: {
         javascript: true,
@@ -36,7 +38,7 @@ class TimerWindow {
     if (Common.DEBUG_MODE) {
       this.timerWindow.webContents.openDevTools();
     }
-    this.timerWindow.loadURL(`file://${__dirname}/../views/template.html`);
+    this.timerWindow.loadURL(`file://${__dirname}/../windows/views/template.html`);
     // this.timerWindow.loadURL("http://luxun.pro");
 
     // this.timerWindow.webContents.on('will-navigate', (event, url) => {

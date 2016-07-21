@@ -9,7 +9,13 @@
 </head>
 
 <body>
+  <div class="title-bar">
+    <!-- <a class="button-close"><i class="material-icons">close</i></a> -->
+    <a class="button-preference"><i class="material-icons">settings</i></a>
+  </div>
+  <div class="mask"></div>
   <div class="wrapper">
+
     <div class="pomodoro-box">
       <h1 class="pomodoro-name">TimeSpan</h1>
       <input class="pomodoro-input" type="text" name="pomodoro-input" value="TimeSpan" />
@@ -20,13 +26,19 @@
           <circle cx="180" cy="180" r="175" stroke-width="7" stroke="#FAFAFA" fill="none" transform="matrix(0,-1,1,0,0,360)" stroke-dasharray="0 1099"></circle>
         </svg>
       </div>
+
       <div class="pomodoro-trigger-box">
         <a class="pomodoro-trigger">
           <i class="material-icons" data-trigger="false">play_arrow</i>
           <!-- <i class="material-icons">pause</i> -->
         </a>
       </div>
+
+      <div class="pomodoro-preference-box">
+
+      </div>
     </div>
+
   </div>
   <script>
     if (typeof module === 'object') {
@@ -38,6 +50,7 @@
   <script type="text/javascript" src="./../renderers/settings.js"></script>
   <script type="text/javascript" src="./../renderers/pomodoro-timer.js"></script>
   <script type="text/javascript" src="./../renderers/pomodoro-inputer.js"></script>
+  <script type="text/javascript" src="./../renderers/pomodoro-pref.js"></script>
   <script>
     if (window.module) module = window.module;
   </script>

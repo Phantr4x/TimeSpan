@@ -6,9 +6,9 @@ const {app, BrowserWindow, ipcMain} = require('electron');
 
 const Common = require('./common');
 
-const TimerWindow = require('./windows/controllers/timer');
-const StickyWindow = require('./windows/controllers/sticky');
-const AppTray = require('./windows/controllers/app_tray');
+const TimerWindow = require('./controllers/timer');
+const StickyWindow = require('./controllers/sticky');
+const AppTray = require('./controllers/app_tray');
 
 class TimeSpan {
   constructor() {

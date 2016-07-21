@@ -7,7 +7,7 @@ class Common {
 Common.ELECTRON = "Electron";
 Common.TIMESPAN = "TimeSpan";
 
-Common.DEBUG_MODE = false;
+Common.DEBUG_MODE = true;
 
 Common.WINDOW_SIZE_TIMER = { width: 480, height: 768 };
 Common.WINDOW_SIZE_STICKY = { width: 480, height: 768 };

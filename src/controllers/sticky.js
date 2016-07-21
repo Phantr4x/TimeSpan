@@ -3,7 +3,7 @@
 const path = require('path');
 const {app, BrowserWindow} = require('electron');
 
-const Common = require('../../common');
+const Common = require('../common');
 
 class StickyWindow {
   constructor() {
@@ -12,7 +12,7 @@ class StickyWindow {
 
   createWindow() {
     this.stickyWindow = new BrowserWindow({
-      
+
     })
   }
 }
