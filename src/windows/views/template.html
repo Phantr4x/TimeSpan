@@ -11,7 +11,7 @@
 <body>
   <div class="title-bar">
     <!-- <a class="button-close"><i class="material-icons">close</i></a> -->
-    <a class="button-preference"><i class="material-icons">settings</i></a>
+    <a class="button-preference"><i class="material-icons">style</i></a>
   </div>
   <div class="mask"></div>
   <div class="wrapper">
@@ -33,11 +33,93 @@
           <!-- <i class="material-icons">pause</i> -->
         </a>
       </div>
-
-      <div class="pomodoro-preference-box">
+      <div class="preference-box">
 
       </div>
     </div>
+
+    <!-- WhiteNoise -->
+    <div class="whitenoise-box">
+        <div class="whitenoise-carousel">
+          <a class="whitenoise-scroll" id="whitenoise-scroll-left"></a>
+          <div class="whitenoise-carousel-window">
+            <div class="whitenoise-carousel-slides">
+
+              <div class="whitenoise-item" id="rain">
+                <div class="whitenoise-icon">
+                  <!-- <img src="http://soundrown.com/icon/rain_55x55.png" alt="Rain"> -->
+                  <i class="material-icons">beach_access</i>
+                  <p class="whitenoise-name">rain</p>
+                </div>
+                <div class="whitenoise-audioplayer">
+                  <audio preload="none" controls loop style="width: 0px; height: 0px; visibility: hidden;">
+      							<source src="../../../assets/audio/white_noise/Rain15.mp3">
+      							<source src="../../../assets/audio/white_noise/Rain30.ogg">
+      						</audio>
+                  <div class="whitenoise-playpause"><a></a></div>
+                </div>
+              </div>
+
+              <div class="whitenoise-item" id="cafe">
+                <div class="whitenoise-icon">
+                  <i class="material-icons">local_drink</i>
+                  <!-- <img src="http://soundrown.com/icon/coffeeshop_55x55.png" alt="cafe"> -->
+                  <p class="whitenoise-name">cafe</p>
+                </div>
+                <div class="whitenoise-audioplayer">
+                    <audio preload="none" controls loop style="width: 0px; height: 0px; visibility: hidden;">
+        							<source src="../../../assets/audio/white_noise/CoffeeShop15.mp3">
+        							<source src="../../../assets/audio/white_noise/CoffeeShop30.ogg">
+        						</audio>
+                  </div>
+              </div>
+
+              <div class="whitenoise-item" id="waves">
+                <div class="whitenoise-icon">
+                  <i class="material-icons">pool</i>
+                  <!-- <img src="http://soundrown.com/icon/waves_55x55.png" alt="waves"> -->
+                  <p class="whitenoise-name">waves</p>
+                </div>
+                <div class="whitenoise-audioplayer">
+                    <audio preload="none" controls loop style="width: 0px; height: 0px; visibility: hidden;">
+        							<source src="../../../assets/audio/white_noise/Waves15.mp3">
+        							<source src="../../../assets/audio/white_noise/Waves30.ogg">
+        						</audio>
+                  </div>
+              </div>
+
+              <div class="whitenoise-item" id="fire">
+                <div class="whitenoise-icon">
+                  <i class="material-icons">whatshot</i>
+                  <!-- <img src="http://soundrown.com/icon/icon fire.png" alt="fire"> -->
+                  <p class="whitenoise-name">fire</p>
+                </div>
+                <div class="whitenoise-audioplayer">
+                    <audio preload="none" controls loop style="width: 0px; height: 0px; visibility: hidden;">
+        							<source src="../../../assets/audio/white_noise/Fire15.mp3">
+        							<source src="../../../assets/audio/white_noise/Fire30.ogg">
+        						</audio>
+                  </div>
+              </div>
+
+              <div class="whitenoise-item" id="mount">
+                <div class="whitenoise-icon">
+                  <i class="material-icons">terrain</i>
+                  <!-- <img src="http://soundrown.com/icon/icon bird.png" alt="birds"> -->
+                  <p class="whitenoise-name">mount</p>
+                </div>
+                <div class="whitenoise-audioplayer">
+                    <audio preload="none" controls loop style="width: 0px; height: 0px; visibility: hidden;">
+        							<source src="../../../assets/audio/white_noise/Birds15.mp3">
+        							<source src="../../../assets/audio/white_noise/Birds30.ogg">
+        						</audio>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <a class="whitenoise-scroll" id="whitenoise-scroll-right"></a>
+        </div>
+      </div>
 
   </div>
   <script>
@@ -51,6 +133,7 @@
   <script type="text/javascript" src="./../renderers/pomodoro-timer.js"></script>
   <script type="text/javascript" src="./../renderers/pomodoro-inputer.js"></script>
   <script type="text/javascript" src="./../renderers/pomodoro-pref.js"></script>
+  <script type="text/javascript" src="./../renderers/whitenoise.js"></script>
   <script>
     if (window.module) module = window.module;
   </script>
