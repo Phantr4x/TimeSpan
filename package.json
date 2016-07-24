@@ -4,13 +4,15 @@
   "description": "A Simple Todo Application.",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron src/main.js"
+    "start": "electron src/main.js",
+    "package": "electron-packager . TimeSpan --platform=darwin --arch=all --version=1.2.6 --icon=timespan.icns --app-bundle-id=quantaspace --ignore=node_modules/eslint/ --ignore=node_modules/eslint-plugin-react/ --ignore=node_modules/.bin/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Phantr4x/TimeSpan.git"
   },
   "devDependencies": {
+    "electron-packager": "^7.3.0",
     "electron-prebuilt": "^1.2.6",
     "eslint": "^3.1.1",
     "eslint-plugin-react": "^5.2.2"
